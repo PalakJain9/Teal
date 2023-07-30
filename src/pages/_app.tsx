@@ -18,7 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   return (
-    <div className={`min-h-screen min-w-screen overflow-x-hidden flex flex-col ${inter.className}`}>
+    <div className={`bg-grey min-h-screen min-w-screen overflow-x-hidden flex flex-col ${inter.className}`}>
       <Head>
         <title>Tealfeed x Palak Jain</title>
         <meta name="description" content="Tealfeed x Palak Jain" />

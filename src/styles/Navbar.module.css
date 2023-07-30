@@ -1,0 +1,3 @@
+.sidebarText {
+  @apply w-full px-[1rem] py-[0.5rem] hover:bg-gray-100 cursor-pointer
+}
