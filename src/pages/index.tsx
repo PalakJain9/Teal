@@ -2,10 +2,11 @@ import React from "react";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
+import Link from "next/link";
 
 export default function Home() {
 
-  const [isClicked, setIsClicked] = React.useState(false);
+  const [isClicked, setIsClicked] = React.useState(true);
 
   return (
     <div
@@ -17,13 +18,16 @@ export default function Home() {
       />
       
       <div
-        className="relative flex flex-row w-full h-full"
+        className="flex flex-row w-full h-full"
       >
         {/* sidebar with absolute positioning */}
         <Sidebar 
           isClicked={isClicked}
         />
-        <Hero />
+
+        <Hero 
+          isClicked={isClicked}
+        />
       </div>
     </div>
   )

@@ -88,10 +88,13 @@ function Card (
   )
 }
 
-export default function Hero () {
+export default function Hero ({ isClicked } : {isClicked: boolean}) {
+
   return (
     <div
-      className="flex justify-center items-center w-full h-full px-[1rem]"
+      className={`flex items-center w-full h-full px-[1rem] pt-[5rem] overflow-y-scroll pb-[2rem]
+      ${isClicked ? 'justify-end lg:justify-center' : 'justify-center'}    
+    `}
     >
       <div
         className="w-full md:w-4/5 lg:w-2/3 flex flex-col justify-start items-center gap-3"
@@ -264,9 +267,49 @@ export default function Hero () {
             </p>
           </Card>
 
+          <Card>
+            <div
+              className="h-auto md:h-[15rem] w-full flex justify-center items-center"
+            >
+              <Link
+                href="https://www.linkedin.com/in/palakjain9"
+                className={`${styles.expHeading} hover:underline underline-offset-4`}
+              >
+                View all on LinkedIn &#8594;
+              </Link>
+            </div>
+          </Card>
+
           </div>
 
         </div>
+
+        {/* footer */}
+      <p
+        className="w-3/4 text-gray-700 text-sm mt-[2rem]"
+      >
+        This website was inspired by 
+        <Link 
+          href='https://tealfeed.com/'
+          className="text-teal px-[0.3rem] hover:underline underline-offset-4"
+        >
+          Tealfeed
+        </Link> 
+        and created by 
+        <Link 
+          href='https://heypalakjain.vercel.app/'
+          className="text-teal px-[0.3rem] hover:underline underline-offset-4"
+        >
+          Palak Jain.
+        </Link>
+        You can view 
+        <Link 
+          href='https://github.com/PalakJain9/Teal'
+          className="text-teal px-[0.3rem] hover:underline underline-offset-4"
+        >
+          source code here.
+        </Link>
+      </p>
 
       </div>
     </div>

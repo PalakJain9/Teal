@@ -1,3 +1,7 @@
 .sidebarText {
-  @apply w-full px-[1rem] py-[0.5rem] hover:bg-gray-100 cursor-pointer
+  @apply w-full px-[1rem] py-[0.4rem] cursor-pointer hover:bg-gray-100
+}
+
+.sidebarHeading {
+  @apply font-bold px-[1rem]
 }

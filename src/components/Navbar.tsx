@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 type NavbarProps = {
@@ -9,23 +10,26 @@ export default function Navbar ({ isClicked, setIsClicked } : NavbarProps) {
 
   return (
     <div
-      className="flex flex-row justify-between items-center w-full px-[1rem] h-[5rem] bg-white border-b-2 border-gray-100 md:border-b-0"
+      className="fixed top-0 z-10 flex flex-row justify-between items-center w-full px-[1rem] h-[5rem] bg-white border-b-2 border-gray-100 md:border-b-0"
     >
       <div
         className="flex flex-row justify-start items-center gap-4"
       >
         <button
           onClick={() => setIsClicked(!isClicked)}
-          className="md:text-2xl text-gray-400"
+          className={`md:text-2xl text-gray-400 border-gray-300 p-[0.3rem] rounded-md
+          ${isClicked ? 'border-2' : 'border-0'}
+          `}
         >
           &#9776;
         </button>
 
-        <p
+        <Link
+          href='/'
           className="md:text-2xl font-semibold text-gray-700"
         >
           <span className="text-teal">Teal</span>feed x Palak
-        </p>
+        </Link>
 
       </div>
 
@@ -35,11 +39,12 @@ export default function Navbar ({ isClicked, setIsClicked } : NavbarProps) {
       >
       </input>
 
-      <button
-        className="py-[0.5rem] px-[1rem] rounded bg-teal text-white text-sm md:text-base"
+      <Link
+        href="mailto:palakb188@gmail.com"
+        className="py-[0.5rem] px-[1rem] rounded bg-teal text-white text-sm md:text-base hover:underline underline-offset-4"
       >
         Hire Palak
-      </button>
+      </Link>
 
     </div>
   )
